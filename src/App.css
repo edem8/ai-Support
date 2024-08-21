@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1b1b1b; /* Darker background color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  max-width: 360px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e1e1e; /* Darker app background */
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  height: 600px; /* Adjust height as needed */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.language-selector {
+  width: 120px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.language-selector .css-yk16xz-control {
+  background-color: #1e1e1e; /* Match the app background */
+  border: 1px solid #555; /* Subtle border */
+  color: #e0e0e0;
+}
+
+.language-selector .css-1okebmr {
+  color: #e0e0e0; /* Text color */
+}
+
+.language-selector .css-1u4zu26-menu {
+  background-color: #1e1e1e; /* Match the app background */
+  color: #e0e0e0;
+}
+
+.language-selector .css-1n7v3ny-option {
+  color: #e0e0e0; /* Option text color */
+}
+
+/* Adjust the star button styling */
+.rate-button {
+  background-color: transparent; /* No background color */
+  color: #e0e0e0;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px; /* Decrease size of stars */
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.star {
+  color: #555; /* Default color for unfilled stars */
+  margin: 0 2px;
+}
+
+.star.filled {
+  color: #ffd700; /* Gold color for filled stars */
+}
+
+.chat {
+  flex: 1;
+  overflow-y: auto;
+
+  margin-bottom: 20px;
+  padding: 20px 10px;
+  background-color: #2b2b2b; /* Darker chat background */
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column; /* Display messages from top to bottom */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.chat::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.llm {
+  justify-content: flex-start;
+}
+
+.message-text {
+  background-color: #555; /* Darker message bubble */
+  color: #e0e0e0; /* Light text color */
+  padding: 8px;
+  border-radius: 10px;
+  max-width: 80%;
+  line-height: 1.4;
+  font-size: 13.5px;
+  letter-spacing: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.message.user .message-text {
+  background-color: #007a7a; /* User message background color */
+}
+
+.message.llm .message-text {
+  background-color: #333; /* LLM message background color */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.input {
+  flex: 1;
+  padding: 8px; /* Increased height */
+  border: 1px solid #555; /* Darker border */
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: #222; /* Dark input background */
+  color: #e0e0e0; /* Light text color */
+  outline: none;
+  resize: none; /* Prevent resizing */
+}
+
+.send-button {
+  background-color: #007a7a; /* Subdued button color */
   color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.send-button:hover {
+  background-color: #005f5f; /* Darker color on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.send-button:active {
+  transform: scale(0.98); /* Slight scale-down effect on click */
 }
